@@ -11,3 +11,11 @@ func Divide(a, b int) (int, error) {
 	}
 	return a / b, nil
 }
+
+func MustDivide(a, b int) int {
+	result, e := Divide(a, b)
+	if e != nil {
+		panic(e)
+	}
+	return result
+}
